@@ -37,7 +37,7 @@ class Course {
     }
     addStudent(student) {
         this.students.push(student);
-        student.enrollForCourses(`AI`);
+        student.enrollForCourses(this);
     }
     setTeacher(teacher) {
         this.teachers.push(teacher);
@@ -45,8 +45,6 @@ class Course {
 }
 const student1 = new Student("Jazil", 16, 2345);
 const student2 = new Student(`Sulaiman`, 16, 6662);
-student1.enrollForCourses("AI");
-student2.enrollForCourses(`Blockchain`);
 console.log(student1);
 console.log(student2);
 const teacher1 = new Teacher(`Zia`, 65, 50000);

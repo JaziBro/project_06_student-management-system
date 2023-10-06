@@ -13,14 +13,14 @@ class Person {
 
 class Student extends Person {
     rollNumber: number
-    courses:Course[] = []
+    courses: Course[] = []
 
     constructor(name: string, age: number, rollNumber: number){
         super(name, age)
         this.rollNumber = rollNumber
     }
 
-    enrollForCourses(course: string){
+    enrollForCourses(course: Course){
         this.courses.push(course)
     }
 }
@@ -53,7 +53,7 @@ class Course {
 
     addStudent(student: Student){
         this.students.push(student)
-        student.enrollForCourses(`AI`)
+        student.enrollForCourses(this)
        }
         
     setTeacher(teacher: Teacher){
@@ -63,8 +63,6 @@ class Course {
 
 const student1 = new Student("Jazil", 16, 2345)
 const student2 = new Student(`Sulaiman`, 16, 6662)
-student1.enrollForCourses("AI")
-student2.enrollForCourses(`Blockchain`)
 console.log(student1)
 console.log(student2)
 
